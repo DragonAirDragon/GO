@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-import psycopg
 
 app = FastAPI()
 
@@ -15,4 +14,5 @@ app.add_middleware(
 
 @app.get("/healthz")
 async def healthz():
+    """Health check endpoint for service monitoring."""
     return {"status": "ok"}
