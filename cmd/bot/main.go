@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/DragonAirDragon/GO/internal/github"
+	"github.com/DragonAirDragon/GO/internal/models"
 	"github.com/DragonAirDragon/GO/internal/telegram"
 	"github.com/DragonAirDragon/GO/pkg/utils"
 )
@@ -182,22 +183,18 @@ func runMonitoring(ctx context.Context, chatID int64, username string, interval 
 				message := "🆕 Обнаружены новые репозитории:\n"
 
 				for _, repoName := range newRepos {
-					var repo *struct {
-						Name        string
-						Description string
-						URL         string
-					}
+					var foundRepo *models.Repository
 					
 					for i := range currentRepos {
 						if currentRepos[i].Name == repoName {
-							repo = &currentRepos[i]
+							foundRepo = &currentRepos[i]
 							break
 						}
 					}
 					
-					if repo != nil {
-						message += "• " + repo.Name + " - " + repo.Description + "\n"
-						message += "  URL: " + repo.URL + "\n\n"
+					if foundRepo != nil {
+						message += "• " + foundRepo.Name + " - " + foundRepo.Description + "\n"
+						message += "  URL: " + foundRepo.URL + "\n\n"
 					}
 				}
 
