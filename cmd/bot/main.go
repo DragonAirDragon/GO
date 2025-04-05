@@ -8,10 +8,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/DragonAirDragon/github-tg-bot/internal/config"
-	"github.com/DragonAirDragon/github-tg-bot/internal/github"
-	"github.com/DragonAirDragon/github-tg-bot/internal/telegram"
-	"github.com/DragonAirDragon/github-tg-bot/pkg/utils"
+	"github.com/DragonAirDragon/GO/internal/config"
+	"github.com/DragonAirDragon/GO/internal/github"
+	"github.com/DragonAirDragon/GO/internal/telegram"
+	"github.com/DragonAirDragon/GO/pkg/utils"
 )
 
 func main() {

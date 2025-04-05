@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/DragonAirDragon/github-tg-bot/internal/models"
+	"github.com/DragonAirDragon/GO/internal/models"
 	"github.com/google/go-github/v60/github"
 	"golang.org/x/oauth2"
 )
