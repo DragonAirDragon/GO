@@ -1,10 +1,10 @@
 .PHONY: run build test
 
 run:
-	go run cmd/api/main.go
+	go run cmd/bot/main.go
 
 build:
-	go build -o bin/api cmd/api/main.go
+	go build -o bin/github-tg-bot cmd/bot/main.go
 
 test:
 	go test -v ./...
